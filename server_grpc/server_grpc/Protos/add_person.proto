@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "server_grpc";
+
+// The greeting service definition.
+service AddPerson {
+  // Sends a greeting
+  rpc SendValues (PersonValues) returns (dbAnswer);
+}
+
+// The request message containing the user's name.
+message dbAnswer {
+  int32 id = 1;
+  string error = 2;
+}
+
+// The response message containing the greetings.
+message PersonValues {
+  string first_name = 1;
+  string second_name = 2;
+  int32 age = 3;
+}

@@ -1,0 +1,12 @@
+version: "3"
+services:
+  server:
+    image: server_grpc:latest
+    ports:
+      - 5001:5001
+    depends_on:
+      - postgres-local
+  postgres-local:
+    image: postgres-local:latest
+    ports:
+      - 5432:5432

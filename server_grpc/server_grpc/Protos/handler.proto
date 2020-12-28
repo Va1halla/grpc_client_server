@@ -1,0 +1,17 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "server_grpc";
+
+// The greeting service definition.
+service Handle {
+  // Sends a greeting
+	 rpc signalToServer (client_Signal) returns (server_Signal);
+}
+
+message client_Signal{
+	bool signal = 1;
+}
+
+message server_Signal{
+	bool signal = 1 ;
+}
